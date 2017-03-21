@@ -2,15 +2,14 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
 	<!-- classPathEntry用于设置数据库驱动包位置 -->
-	<classPathEntry
-		location="F:\git\Test\MyBatisGeneratorTest\lib\mysql-connector-java-5.1.7-bin.jar" />
+	<classPathEntry location="F:\git\Test\MyBatisGeneratorTest\lib\mysql-connector-java-5.1.7-bin.jar" />
 	<!-- targetRuntime：代码生成目标，默认是MyBatis3 -->
 	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!-- 自定义注释 -->
 		<commentGenerator type="com.tangjf.mybatis.tool.MyCommentGenerator" />
 		<!-- 数据库连接的信息 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
-			password="123456">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/ttweb"
+			userId="root" password="123456">
 		</jdbcConnection>
 		<!-- 解决数据转换问题 -->
 		<javaTypeResolver>
@@ -18,25 +17,24 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!--生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.tangjf.org.dto"
-			targetProject="E:\ibator\src">
+		<javaModelGenerator targetPackage="com.tangjf.org.dto" targetProject="E:\ibator\src">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="false" />
 		</javaModelGenerator>
 		<!--生成的映射文件包名和位置 -->
-		<sqlMapGenerator targetPackage="com.tangjf.org.mapping"
-			targetProject="E:\ibator\src">
+		<sqlMapGenerator targetPackage="com.tangjf.org.mapping" targetProject="E:\ibator\src">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!--生成DAO的包名和位置 -->
-		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.tangjf.org.dao" targetProject="E:\ibator\src">
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.tangjf.org.dao" targetProject="E:\ibator\src">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!--要生成那些文件 -->
 		<!--<table tableName="表名" domainObjectName="类名"></table> -->
-		<table tableName="t_sys_org" enableCountByExample="true"
-			enableUpdateByExample="true" enableDeleteByExample="true"
-			enableSelectByExample="true" selectByExampleQueryId="true"></table>
+		<table tableName="t_sys_org" domainObjectName="SysOrg" enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+
+
+		</table>
 	</context>
 </generatorConfiguration>
